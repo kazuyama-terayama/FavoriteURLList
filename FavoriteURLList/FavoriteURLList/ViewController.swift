@@ -73,6 +73,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text=URLTitle
         return cell
     }
+    
+    //セルをタップした時の処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // セルの選択を解除
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        //セルに記載されているURLを起動する。
+        let urlStr=URLList[indexPath.row]
+        let url = URL(string: urlStr)
+        if UIApplication.shared.canOpenURL(url!){
+            UIApplication.shared.open(url!)
+        }
+    }
 
 }
 
