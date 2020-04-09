@@ -77,7 +77,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //セルをタップした時の処理
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // セルの選択を解除
+        // セルの選択を解除(セル選択解除がないとApple審査に落ちる)
         tableView.deselectRow(at: indexPath, animated: true)
         
         //セルに記載されているURLを起動する。
