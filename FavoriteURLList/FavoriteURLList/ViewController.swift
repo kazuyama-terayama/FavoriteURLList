@@ -88,5 +88,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //セルを削除した時の処理
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        //削除処理かどうか
+        if editingStyle==UITableViewCell.EditingStyle.delete{
+            //URLリストから削除
+            URLList.remove(at: indexPath.row)
+            //セルの削除
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+            //データの保存。Data型にシリアライズ
+            do{
+                let data:Data=try NSKeyedArchiver.archivedData(withRootObject: URLList, requiringSecureCoding: true)
+                //UserDefaultsに保存
+                let userDefaults=UserDefaults.standard
+                userDefaults.set(data, forKey: "URLList")
+                userDefaults.synchronize()
+            }catch{
+                //error処理なし
+            }
+        }
+    }
+    
 }
 
