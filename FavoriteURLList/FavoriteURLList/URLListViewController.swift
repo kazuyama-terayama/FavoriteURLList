@@ -9,7 +9,7 @@
 import UIKit
 
 //UITableViewDAtaSource, UITableViewDelegateのプロトコルを実装
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class URLListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //URLを格納した配列
     var URLList = [String]()
@@ -57,7 +57,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //アラートダイアログを表示
         present(alertContoller, animated: true, completion: nil)
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //URLListの配列の長さを返却
@@ -112,6 +111,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
-    
 }
 
