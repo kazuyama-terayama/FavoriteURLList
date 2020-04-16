@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B024911B2448342300D0CC30 /* TitleToURLList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B02491192448342300D0CC30 /* TitleToURLList.xcdatamodeld */; };
+		B024911E2448A75300D0CC30 /* Title+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024911C2448A75300D0CC30 /* Title+CoreDataClass.swift */; };
+		B024911F2448A75300D0CC30 /* Title+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B024911D2448A75300D0CC30 /* Title+CoreDataProperties.swift */; };
 		B0295ABA2438DB7000978445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0295AB92438DB7000978445 /* AppDelegate.swift */; };
 		B0295ABC2438DB7000978445 /* URLListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0295ABB2438DB7000978445 /* URLListViewController.swift */; };
 		B0295ABF2438DB7000978445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0295ABD2438DB7000978445 /* Main.storyboard */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B024911A2448342300D0CC30 /* TitleToURLList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TitleToURLList.xcdatamodel; sourceTree = "<group>"; };
+		B024911C2448A75300D0CC30 /* Title+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Title+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B024911D2448A75300D0CC30 /* Title+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Title+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B0295AB62438DB7000978445 /* FavoriteURLList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoriteURLList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0295AB92438DB7000978445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0295ABB2438DB7000978445 /* URLListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLListViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +46,9 @@
 		B0295AAD2438DB7000978445 = {
 			isa = PBXGroup;
 			children = (
+				B024911C2448A75300D0CC30 /* Title+CoreDataClass.swift */,
+				B024911D2448A75300D0CC30 /* Title+CoreDataProperties.swift */,
+				B02491192448342300D0CC30 /* TitleToURLList.xcdatamodeld */,
 				B0295AB82438DB7000978445 /* FavoriteURLList */,
 				B0295AB72438DB7000978445 /* Products */,
 			);
@@ -138,9 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B024911E2448A75300D0CC30 /* Title+CoreDataClass.swift in Sources */,
 				B0295ABC2438DB7000978445 /* URLListViewController.swift in Sources */,
 				B0E9836C243FF8D000562D02 /* TitleListViewController.swift in Sources */,
 				B0295ABA2438DB7000978445 /* AppDelegate.swift in Sources */,
+				B024911F2448A75300D0CC30 /* Title+CoreDataProperties.swift in Sources */,
+				B024911B2448342300D0CC30 /* TitleToURLList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +352,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B02491192448342300D0CC30 /* TitleToURLList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B024911A2448342300D0CC30 /* TitleToURLList.xcdatamodel */,
+			);
+			currentVersion = B024911A2448342300D0CC30 /* TitleToURLList.xcdatamodel */;
+			path = TitleToURLList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B0295AAE2438DB7000978445 /* Project object */;
 }
