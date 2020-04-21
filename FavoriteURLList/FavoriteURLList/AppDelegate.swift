@@ -108,8 +108,73 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    // MARK: -CoreDataMethod Read用
+    
+    //引数にEntityを渡してあげることで、登録されているTitleを全て返してくれる
+    func all(entityName:String) -> [Title]{
+        return self.fetch(entityName, limit: 0)
+    }
+    //Titleを全て返しつつ、キーに入れたものでソートしてくれる。
+    func all(entityName:String, sortKey:String?) -> [Title]{
+        return self.fetch(entityName, sortKey: sortKey, limit: 0)
+    }
+    
+    func fetch(entityName:String, limit:Int) -> [Title] {
+        return self.fetch(entityName, sortKey: nil, limit: limit)
+    }
+    
+    func fetch(entityName:String!, sortKey:String?, limit:Int!) -> [Title] {
+        let context: NSManagedObjectContext! = self.managedObjectContext
+        let request: NSFetchRequest! = NSFetchRequest()
+        let entity: NSEntityDescription = NSEntityDescription.entityForName(entityName, inManagedObjectContext: context)!
+        request.entity = entity
+        if let sortKey = sortKey {
+            request.sortDescriptors = [NSSortDescriptor(key: sortKey, ascending: true)]
+        }
+        request.fetchLimit = limit
+        let failureReason = "There was an error fetching CoreDataResult."
+        var mutableFetchResult = [AnyObject]()
+        do {
+            mutableFetchResult = try context.executeFetchRequest(request)
+            
+        } catch {
+            // Report any error we got.
+            var dict = [String: AnyObject]()
+            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
+            dict[NSLocalizedFailureReasonErrorKey] = failureReason
+            
+            dict[NSUnderlyingErrorKey] = error as NSError
+            let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+            // Replace this with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
+            abort()
+        }
+        
+        return mutableFetchResult as! [Title]
+    }
+    
+    // MARK: - CoreDataMethod Insert用
+    func entityForInsert(entityName:String!) -> NSManagedObject?{
+        let context: NSManagedObjectContext = self.managedObjectContext
+        return NSEntityDescription.insertNewObjectForEntityForName(entityName, inManagedObjectContext: context)
+    }
+    
+    // MARK: - Core Data Saving support
+    func saveContext () {
+        if managedObjectContext.hasChanges {
+            do {
+                try managedObjectContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+        }
+    }
     /* ここまで引用*/
-
-
 }
 

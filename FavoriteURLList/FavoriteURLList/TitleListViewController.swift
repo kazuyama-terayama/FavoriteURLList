@@ -23,6 +23,18 @@ class TitleListViewController: UIViewController, UITableViewDataSource, UITableV
         if let storedURLList = userdefaults.array(forKey: "titleList")as? [String]{
             titleList.append(contentsOf: storedURLList)
         }
+        
+        /* ここから引用
+         * https://qiita.com/nasteng/items/895b594155f1a6cce94e
+         **/
+        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        //instance生成
+        let Title1 = appDelegate.entityForInsert("Title") as! Title
+        Title1.titleName = "テスト 太郎"
+        Title1.title = 
+        //CoreDataに登録
+        appDelegate.saveContext()
     }
     
     //+ボタンをタップした時に呼ばれる処理

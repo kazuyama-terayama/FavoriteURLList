@@ -2,7 +2,7 @@
 //  Title+CoreDataProperties.swift
 //  FavoriteURLList
 //
-//  Created by 寺山和也 on 2020/04/16.
+//  Created by 寺山和也 on 2020/04/21.
 //  Copyright © 2020 寺山和也. All rights reserved.
 //
 //
@@ -17,6 +17,7 @@ extension Title {
         return NSFetchRequest<Title>(entityName: "Title")
     }
 
-    @NSManaged public var title: NSData?
+    @NSManaged public var array: NSData?
+    @NSManaged public var titleName: String?
 
 }

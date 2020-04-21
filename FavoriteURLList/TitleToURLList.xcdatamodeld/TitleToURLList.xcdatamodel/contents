@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Title" representedClassName="Title" syncable="YES" codeGenerationType="class">
-        <attribute name="title" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="array" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="titleName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Title" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Title" positionX="-63" positionY="-18" width="128" height="75"/>
     </elements>
 </model>
